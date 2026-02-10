@@ -1,45 +1,145 @@
-body {
-  font-family: Arial, sans-serif;
+/* GLOBAL */
+* {
   margin: 0;
-  background-color: #0f172a;
-  color: #e5e7eb;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: linear-gradient(180deg, #020617, #0f172a);
+  color: #e5e7eb;
+  line-height: 1.7;
+}
+
+/* HERO */
 .hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 80px 20px;
+  padding: 40px;
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
+  margin-bottom: 10px;
 }
 
 .hero p {
   font-size: 1.2rem;
-  margin-bottom: 20px;
+  opacity: 0.9;
+  max-width: 700px;
+}
+
+.buttons {
+  margin-top: 30px;
 }
 
 .buttons a {
-  margin: 5px;
-  padding: 10px 16px;
+  display: inline-block;
+  margin: 8px;
+  padding: 12px 22px;
+  border-radius: 30px;
   background: #38bdf8;
   color: #020617;
+  font-weight: bold;
   text-decoration: none;
-  border-radius: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.buttons a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(56,189,248,0.4);
+}
+
+/* SECTIONS */
+section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 100px 30px;
+}
+
+section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+section h2::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: #38bdf8;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+}
+
+/* SKILLS */
+h3 {
+  margin-top: 20px;
+  color: #38bdf8;
+}
+
+/* PROJECTS */
+.project {
+  background: rgba(255,255,255,0.03);
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 30px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.project img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.project a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #38bdf8;
+  text-decoration: none;
   font-weight: bold;
 }
 
-section {
-  max-width: 900px;
-  margin: auto;
-  padding: 40px 20px;
+/* LISTS */
+ul {
+  margin-left: 20px;
 }
 
-h2 {
-  border-bottom: 2px solid #38bdf8;
-  padding-bottom: 5px;
+li {
+  margin-bottom: 8px;
 }
 
-.project {
-  margin-bottom: 25px;
+/* ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
 }
